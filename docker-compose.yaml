@@ -3,7 +3,7 @@ version: "3.7"
 services:
   store-api-service-database:
     image: postgres:14.1
-    container_name: store-api_database
+    container_name: store-api-database
     restart: always
     env_file:
       - ./config/variables.env
