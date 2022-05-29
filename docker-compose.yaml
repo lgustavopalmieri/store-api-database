@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  store-api-service-database:
+    image: postgres:14.1
+    container_name: store-api_database
+    restart: always
+    env_file:
+      - ./config/variables.env
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    networks:
+      - store-api-network-database
+    ports:
+      - "5432:5432"
+    volumes:
+      - store-api-volume-database:/var/lib/postgresql/data
+
+networks:
+  store-api-network-database:
+    name: store-api-network-database
+
+volumes:
+  store-api-volume-database:
+    name: store-api-volume-database
