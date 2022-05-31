@@ -6,7 +6,7 @@ services:
     container_name: store-api-db
     restart: always
     env_file:
-      - ./variables.env
+      - ./config.env
     logging:
       options:
         max-size: 10m
@@ -23,5 +23,5 @@ networks:
     name: store-api-net-db
 
 volumes:
-  store-api-volume-db:
+  store-api-vol-db:
     name: store-api-vol-db
